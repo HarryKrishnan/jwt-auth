@@ -38,7 +38,9 @@ func (Table) TableName() string {
 }
 
 func NewMydb() models.Database {
-	dsn := "host=localhost user=postgres password=Abhi@1234 dbname=postgres port=5433 sslmode=disable TimeZone=Asia/Shanghai"
+	// dsn := "host=localhost user=postgres password=Abhi@1234 dbname=postgres port=5433 sslmode=disable TimeZone=Asia/Shanghai"
+	dsn := "host=database-1.cosxt6uihrpp.us-east-1.rds.amazonaws.com user=postgres password=Abhi123456789 dbname=postgres port=5432 TimeZone=Asia/Shanghai"
+
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
