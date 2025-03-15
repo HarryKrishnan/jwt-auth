@@ -38,8 +38,17 @@ func (Table) TableName() string {
 }
 
 func NewMydb() models.Database {
-	// dsn := "host=localhost user=postgres password=Abhi@1234 dbname=postgres port=5433 sslmode=disable TimeZone=Asia/Shanghai"
-	dsn := "host=database-1.c1utpdfjvlfk.us-east-1.rds.amazonaws.com user=postgres password=Abhi123456789 dbname=postgres port=5432 TimeZone=Asia/Shanghai"
+	dsn := "host=localhost user=postgres password=Abhi@1234 dbname=postgres port=5433 sslmode=disable TimeZone=Asia/Shanghai"
+	// os.Getenv("POSTGRES_ENV_DB_NAME")
+	// dsn := "host=localheost user=postgres password"
+	// dsn := "host=database-1.c8bzoy5fjg2f.us-east-1.rds.amazonaws.com user=postgres password=hari123456 dbname=postgres port=5432 TimeZone=Asia/Shanghai"
+	// dsn := "host=192.168.1.39 user=postgres password=Abhi@1234 dbname=postgres port=5433 sslmode=disable TimeZone=Asia/Shanghai"
+	// dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s  sslmode=disable TimeZone=%s", os.Getenv("HOST"), os.Getenv("USER"), os.Getenv("PASSWORD"), os.Getenv("DBNAME"), os.Getenv("PORT"), os.Getenv("TIMEZONE"))
+	// if err != nil {
+	// 	fmt.Println("Error in getting the environment variables")
+	// 	fmt.Println(err)
+	// }
+	// dsn := "host=database-1.c1utpdfjvlfk.us-east-1.rds.amazonaws.com user=postgres password=Abhi123456789 dbname=postgres port=5432 TimeZone=Asia/Shanghai"
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {

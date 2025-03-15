@@ -18,6 +18,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -29,10 +30,15 @@ import (
 )
 
 func main() {
+	fmt.Println(
+		"Hello, Welcome to the server",
+	)
 	mux := http.NewServeMux()
 	pgdb := db.NewMydb()
 	// defer pgdb
-
+	fmt.Println(
+		"Hello, Welcomesssse to the server",
+	)
 	// Define your route handlers
 	mux.HandleFunc("/login", handler.Login(pgdb))
 	mux.HandleFunc("/signup", handler.Signup(pgdb))
